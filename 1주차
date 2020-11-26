@@ -1,10 +1,20 @@
-수업일자
+스터디 일자
 
 2020-11-23
+
+다음 스터디
+
+2020-11-29 (기본 매주 일요일 오전 11시, 월3회, 변동 있음)
 
 수업내용
 
 준비해올 것
+1. Sourcetree 설치 (https://sourcetreeapp.com/)
+2. Eclipse 설치 (https://mergedoc.osdn.jp/#pleiades.html)
+3. Java11 설치 (https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+4. 사쿠라에디터 설치 (https://sakura-editor.github.io/)
 
 공부해올 것
 
+1. git명령어(CLONE, PULL, COMMIT, PUSH, BRUNCH)
+2. 마크다운(을 이용해서 이걸 적어야하는데 일단 내용만 적어둠)
