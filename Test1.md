@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class Test1 {
 
+
 	public static void main(String[] args) {
 		calRecArea(10, 20);
 
