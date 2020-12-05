@@ -28,6 +28,21 @@ public class test {
 		System.out.println("char출력 :" + a);
 		System.out.println("String출력 :" + t);
 
+		System.out.println("여기는 if 연습");
+
+		int u = 5;
+
+		System.out.println("u = 5");
+
+		if(u >= 5) {
+			System.out.println("u는 5보다 같거나 크다");
+		}
+		if(u < 5) {
+			System.out.println("u는 5보다 작다");
+		}
+
+
+
 	}
 
 }
