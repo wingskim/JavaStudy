@@ -41,7 +41,19 @@ public class test {
 			System.out.println("u는 5보다 작다");
 		}
 
+		System.out.println("여기는 if문 연습출력");
 
+		for(int i=0; i<10; i++ ) {
+			System.out.println("i는 " +i);
+		}
+
+		System.out.println("여기는 while문 출력");
+
+		int i = 1;
+		while (i<10) {
+			System.out.println(i+"*"+(i+1)+"="+i*(i+1));
+			i++;
+		}
 
 	}
 
