@@ -14,7 +14,7 @@ public class test {
 		System.out.println("가로 :" + widthRec);
 		System.out.println("세로 :" + heightRec);
 		System.out.println("사각형면적 : 가로*세로 = " + (widthRec * heightRec));
-		System.out.println("그냥사칙연산 더하기 : 가로+세로= " + (widthRec + heightRec));
+		System.out.println("그냥사칙연산 더하기 : 가로+세로= " + (widthRec + heightRec)); //
 		System.out.println("그냥사칙연산 빼기 : 가로-세로= " + (widthRec - heightRec));
 		System.out.println("이번에는 나누기 : 가로/세로= " + (widthRec / heightRec ) + " 아... int는 소수점 표현 안됨");
 		System.out.println("다시 나누기 : 세로/가로= " + (heightRec / widthRec));
