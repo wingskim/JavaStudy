@@ -42,6 +42,20 @@ https://tailwindcss.com/docs
 
 2021/05/23
 
-컨텐츠 톱 페이지 버튼달고 모바일페이지 손보기
+컨텐츠 톱 페이지 버튼달기 ⇒완료
+
+2021/05/25
+컨텐츠 톱 페이지 모바일페이지 손보기 ⇒완료
+
+서버기동법
+
+(이클립스)
+1. 프로젝트 추가
+inport -> maven기존프로젝트로부터 추가
+2. 실행구성
+java -어플리케이션 더블클릭(실행)
 
 
+깃 이그노어 사용법
+https://programming119.tistory.com/105
+https://devparklibrary.tistory.com/19
