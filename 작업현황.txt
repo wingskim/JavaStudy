@@ -2,3 +2,13 @@
 
 https://heeestorys.tistory.com/700
 
+   position: absolute;
+    width: 1024px;
+    height: 124px;
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+    
