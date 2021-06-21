@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  
+Parameters:
+  
+Metadata:
+  
+Mappings:
+  
+Conditions:
+  
+Resources:
+  LogicalID:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: String #required
+      EnableDnsHostnames: Boolean
+      EnableDnsSupport: Boolean
+      InstanceTenancy: String
+      Tags:
+        - Tag
+
+  LogicalID:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Tag
+  
+Transform:
+  
+Outputs:
