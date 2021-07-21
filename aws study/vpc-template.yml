@@ -1,3 +1,11 @@
+以下の質問を日本語で答えてください：
+1、VPCPeeringとTransitGateway(トランジットゲートウェイ)の異なりを挙げてください
+2、Cloudformation(クラウドフォーメーション)はどのようなサービスですか？
+3、Yaml(ヤムル)というものは何ですか？
+4、Gitはどのようなツールですか？
+
+
+
 AWSTemplateFormatVersion: 2010-09-09
 
 Description: "This is a template for VPC."
