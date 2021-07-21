@@ -1,0 +1,126 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: "This is a template for VPC."
+  
+Parameters:
+  author:
+    Type: String
+    Default: kim
+
+  AZparameter:
+    Type: AWS::EC2::AvailabilityZone::Name
+    
+
+# Metadata:
+  
+Mappings:
+  Env:
+    account:
+      '178353677394': dev
+      '451327499584': test
+      '573139615285': prod
+  dev:
+    vpc:
+      cidr: 10.2.0.0/16
+
+# Conditions:
+  
+Resources:
+  kimvpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 
+        Fn::FindInMap:
+          - !FindInMap [ Env, account, !Ref AWS::AccountId ]
+          - vpc
+          - cidr # Required
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - ltec-${Envname}-${author}-vpc2
+            - Envname: !FindInMap [ Env, account, !Ref AWS::AccountId ]
+            
+
+  kimigw:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - ltec-${Envname}-${author}-igw
+            - Envname: !FindInMap [ Env, account, !Ref AWS::AccountId ]     
+
+  kimigwattach:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties: 
+      InternetGatewayId: !Ref kimigw
+      VpcId: !Ref kimvpc # Required
+
+  kimsubnetpub1a:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Ref AZparameter
+      CidrBlock: "10.2.0.0/24" # Required
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - ltec-${Envname}-${author}-pub1a
+            - Envname: !FindInMap [ Env, account, !Ref AWS::AccountId ] 
+      VpcId: !Ref kimvpc # Required
+
+  
+  kimsubnetpub2c:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: ap-northeast-1c
+      CidrBlock: "10.2.1.0/24" # Required
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - ltec-${Envname}-${author}-pub2c
+            - Envname: !FindInMap [ Env, account, !Ref AWS::AccountId ] 
+      VpcId: !Ref kimvpc # Required    
+
+  kimsubnetpri1a:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Ref AZparameter
+      CidrBlock: "10.2.2.0/24" # Required
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - ltec-${Envname}-${author}-pri1a
+            - Envname: !FindInMap [ Env, account, !Ref AWS::AccountId ] 
+      VpcId: !Ref kimvpc # Required     
+  
+  kimsubnetpri2c:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: ap-northeast-1c
+      CidrBlock: "10.2.3.0/24" # Required
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - ltec-${Envname}-${author}-pri2c
+            - Envname: !FindInMap [ Env, account, !Ref AWS::AccountId ] 
+      VpcId: !Ref kimvpc # Required     
+  
+# Transform:
+  
+Outputs:
+  subnetpub1a:
+    Value: !Ref kimsubnetpub1a
+    Export: 
+      Name: kim2-subnet-pub1a
+  subnetpub2c:
+    Value: !Ref kimsubnetpub2c
+    Export: 
+      Name: kim2-subnet-pub2c
+  subnetpri1a:
+    Value: !Ref kimsubnetpri1a
+    Export: 
+      Name: kim2-subnet-pri1a       
+  subnetpri2c:
+    Value: !Ref kimsubnetpri2c
+    Export: 
+      Name: kim2-subnet-pri2c            
