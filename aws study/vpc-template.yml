@@ -1,3 +1,10 @@
+
+
+5、各関数の使い方を教えてください。
+（Fn::ImportValue、Fn::FindInMap、Fn::Sub、Ref、Fn::GetAtt、擬似パラメータがより重要）
+6、パラメータ、マッピング、Output、Conditionの使い方を教えてください
+
+
 AWSTemplateFormatVersion: 2010-09-09
 
 Description: "This is a template for VPC."
